@@ -1,4 +1,5 @@
 import { GitHubRepo } from "@/src/lib/github";
+import * as motion from "motion/react-client";
 
 function formatDate(dateString: string): string {
     return new Date(dateString).toLocaleDateString("es-ES", {
@@ -10,7 +11,14 @@ function formatDate(dateString: string): string {
 
 export default function ProjectCard({ repo }: { repo: GitHubRepo }) {
     return (
-        <article className="flex flex-col gap-3 rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
+        <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4 }}
+            whileHover={{ y: -4 }}
+            className="flex flex-col gap-3 rounded-xl border border-neutral-200 p-5 transition-shadow hover:shadow-lg dark:border-neutral-800"
+        >
             <div className="flex items-start justify-between gap-2">
                 <h3 className="text-lg font-semibold">{repo.name}</h3>
                 {repo.language && (
@@ -50,6 +58,6 @@ export default function ProjectCard({ repo }: { repo: GitHubRepo }) {
                     </a>
                 )}
             </div>
-        </article>
+        </motion.article>
     );
 }
