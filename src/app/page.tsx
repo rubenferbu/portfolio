@@ -1,5 +1,6 @@
-import Hero from "../components/Hero";
-import About from "../components/About";
+import Hero from "@/src/components/Hero";
+import About from "@/src/components/About";
+import Projects from "@/src/components/Projects";
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
                 stack={["JavaScript", "TypeScript", "React", "Kotlin", "Jetpack Compose"]}
                 goals="Seguir creciendo como desarrollador Full-Stack, profundizar en la intersección entre desarrollo y ciberseguridad, y participar en proyectos reales donde pueda seguir aprendiendo de otros perfiles."
             />
+            <Projects />
         </main>
     );
 }
