@@ -1,6 +1,7 @@
 import Hero from "@/src/components/Hero";
 import About from "@/src/components/About";
 import Projects from "@/src/components/Projects";
+import Contact from "@/src/components/Contact";
 
 export default function Home() {
     return (
@@ -19,6 +20,7 @@ export default function Home() {
                 goals="Seguir creciendo como desarrollador Full-Stack, profundizar en la intersección entre desarrollo y ciberseguridad, y participar en proyectos reales donde pueda seguir aprendiendo de otros perfiles."
             />
             <Projects />
+            <Contact />
         </main>
     );
 }
