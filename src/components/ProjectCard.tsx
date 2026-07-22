@@ -43,7 +43,7 @@ export default function ProjectCard({ repo }: { repo: GitHubRepo }) {
                 <a href={repo.html_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium underline underline-offset-2 hover:text-neutral-600 dark:hover:text-neutral-300"
+                    className="text-sm font-medium underline underline-offset-2 hover:text-accent"
                 >
                     GitHub
                 </a>
@@ -52,7 +52,7 @@ export default function ProjectCard({ repo }: { repo: GitHubRepo }) {
                     <a href={repo.homepage}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-medium underline underline-offset-2 hover:text-neutral-600 dark:hover:text-neutral-300"
+                        className="text-sm font-medium underline underline-offset-2 hover:text-accent"
                     >
                         Demo
                     </a>

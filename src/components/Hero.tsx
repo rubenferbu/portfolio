@@ -22,8 +22,12 @@ export default function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex min-h-[80vh] flex-col items-center justify-center gap-6 px-4 text-center"
+            className="relative flex min-h-[70vh] flex-col items-center justify-center gap-6 overflow-hidden px-4 text-center"
         >
+            <div
+                aria-hidden="true"
+                className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-3xl"
+            />
             <div className="flex h-32 w-32 items-center justify-center rounded-full bg-neutral-800 text-3xl font-semibold text-white dark:bg-neutral-200 dark:text-neutral-900">
                 {initials}
             </div>
@@ -53,7 +57,7 @@ export default function Hero({
                     href={githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-lg border border-neutral-300 px-5 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800"
+                    className="rounded-lg border border-neutral-300 px-5 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent dark:border-neutral-700"
                 >
                     GitHub
                 </motion.a>
@@ -64,7 +68,7 @@ export default function Hero({
                     href={linkedinUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-lg border border-neutral-300 px-5 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800"
+                    className="rounded-lg border border-neutral-300 px-5 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent dark:border-neutral-700"
                 >
                     LinkedIn
                 </motion.a>
@@ -73,7 +77,7 @@ export default function Hero({
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.97 }}
                     href={`mailto:${email}`}
-                    className="rounded-lg bg-neutral-900 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+                    className="rounded-lg bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-colors hover:opacity-90"
                 >
                     Contacto
                 </motion.a>
