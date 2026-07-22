@@ -1,3 +1,5 @@
+import { siteConfig } from "@/src/config/site";
+
 export interface GitHubRepo {
     name: string;
     description: string | null;
@@ -8,15 +10,6 @@ export interface GitHubRepo {
     language: string | null;
     updated_at: string;
 }
-
-const FEATURED_REPOS = [
-    "rubenferbu/pinterest-async",
-    "rubenferbu/Galeria-JS",
-    "rubenferbu/timetrackpro",
-    "rubenferbu/Proyecto-Backend",
-    "rubenferbu/Javascript-Basico",
-    "rubenferbu/CyberWatch",
-];
 
 async function fetchRepo(fullName: string): Promise<GitHubRepo | null> {
     try {
@@ -41,7 +34,8 @@ async function fetchRepo(fullName: string): Promise<GitHubRepo | null> {
 }
 
 export async function getFeaturedRepos(): Promise<GitHubRepo[]> {
-    const results = await Promise.all(FEATURED_REPOS.map(fetchRepo));
-    // Descarta los que fallaron (404, rate limit, etc.) sin romper toda la página
+    const results = await Promise.all(
+        siteConfig.featuredRepos.map(fetchRepo)
+    );
     return results.filter((repo): repo is GitHubRepo => repo !== null);
 }
