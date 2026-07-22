@@ -1,4 +1,5 @@
 export const siteConfig = {
+    url: "https://portfolio-rubenferbu.vercel.app",
     name: "Rubén Fernández",
     initials: "RF",
     tagline: "Junior Full-Stack Developer",
