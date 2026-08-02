@@ -1,20 +1,19 @@
 import * as motion from "motion/react-client";
 
+interface StackItem {
+    name: string;
+    area: "dev" | "security";
+}
+
 interface AboutProps {
     whatIDo: string;
-    stack: string[];
+    stack: StackItem[];
     goals: string;
 }
 
 export default function About({ whatIDo, stack, goals }: AboutProps) {
-    const cards = [
-        { title: "Qué hago", content: whatIDo },
-        { title: "Stack favorito", content: null },
-        { title: "Objetivos", content: goals },
-    ];
-
     return (
-        <section className="mx-auto max-w-4xl px-4 py-20">
+        <section className="mx-auto max-w-4xl px-4 py-14">
             <h2 className="mb-10 text-center text-3xl font-bold tracking-tight">
                 Sobre mí
             </h2>
@@ -44,11 +43,15 @@ export default function About({ whatIDo, stack, goals }: AboutProps) {
                     <div className="flex flex-wrap gap-2">
                         {stack.map((tech) => (
                             <motion.span
-                                key={tech}
+                                key={tech.name}
                                 whileHover={{ scale: 1.08 }}
-                                className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+                                className={
+                                    tech.area === "security"
+                                        ? "rounded-full bg-accent-security/10 px-3 py-1 text-xs font-medium text-accent-security"
+                                        : "rounded-full bg-accent-dev/10 px-3 py-1 text-xs font-medium text-accent-dev"
+                                }
                             >
-                                {tech}
+                                {tech.name}
                             </motion.span>
                         ))}
                     </div>

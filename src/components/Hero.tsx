@@ -26,7 +26,7 @@ export default function Hero({
         >
             <div
                 aria-hidden="true"
-                className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-3xl"
+                className="absolute left-1/2 top-1/2 -z-10 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-3xl"
             />
             <div className="flex h-32 w-32 items-center justify-center rounded-full bg-neutral-800 text-3xl font-semibold text-white dark:bg-neutral-200 dark:text-neutral-900">
                 {initials}

@@ -4,23 +4,32 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --accent: #2563eb;
-  --accent-foreground: #ffffff;
+  --accent-security: #16a34a;
+  --accent-security-foreground: #ffffff;
+  --accent-dev: #7c3aed;
+  --accent-dev-foreground: #ffffff;
 }
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-security: var(--accent-security);
+  --color-accent-security-foreground: var(--accent-security-foreground);
+  --color-accent-dev: var(--accent-dev);
+  --color-accent-dev-foreground: var(--accent-dev-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --accent: #60a5fa;
-  --accent-foreground: #0a0a0a;
+  --accent-security: #22c55e;
+  --accent-security-foreground: #052e13;
+  --accent-dev: #8b5cf6;
+  --accent-dev-foreground: #f5f3ff;
 }
+
 body {
   background: var(--background);
   color: var(--foreground);
