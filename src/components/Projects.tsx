@@ -5,7 +5,7 @@ export default async function Projects() {
     const repos = await getFeaturedRepos();
 
     return (
-        <section className="mx-auto max-w-5xl px-4 py-20">
+        <section id="proyectos" className="mx-auto max-w-5xl px-4 py-20">
             <h2 className="mb-10 text-center text-3xl font-bold tracking-tight">
                 Proyectos
             </h2>

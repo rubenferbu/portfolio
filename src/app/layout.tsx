@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import ThemeToggle from "@/src/components/ThemeToggle";
+import Nav from "../components/Nav";
 import { siteConfig } from "@/src/config/site";
 import "./globals.css";
 
@@ -49,9 +49,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="fixed right-4 top-4 z-50">
-            <ThemeToggle />
-          </div>
+          <Nav />
           {children}
         </ThemeProvider>
       </body>

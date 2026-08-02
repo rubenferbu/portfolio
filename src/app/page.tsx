@@ -7,6 +7,7 @@ import { siteConfig } from "@/src/config/site";
 export default function Home() {
   return (
     <main>
+      <main className="pt-16"></main>
       <Hero
         name={siteConfig.name}
         initials={siteConfig.initials}
