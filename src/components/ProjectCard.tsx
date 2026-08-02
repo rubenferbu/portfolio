@@ -19,9 +19,9 @@ export default function ProjectCard({ repo }: { repo: GitHubRepo }) {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4 }}
             whileHover={{ y: -4 }}
-            className={`flex flex-col gap-3 rounded-xl border-t-4 p-5 transition-shadow hover:shadow-lg ${isSecurity
-                    ? "border-t-accent-security border-neutral-200 dark:border-neutral-800"
-                    : "border-t-accent-dev border-neutral-200 dark:border-neutral-800"
+            className={`group flex flex-col gap-3 rounded-xl border-t-4 border-neutral-200 p-5 transition-all duration-300 hover:shadow-lg dark:border-neutral-800 ${isSecurity
+                    ? "border-t-accent-security hover:shadow-accent-security/20"
+                    : "border-t-accent-dev hover:shadow-accent-dev/20"
                 }`}
         >
             <div className="flex items-start justify-between gap-2">
@@ -54,21 +54,27 @@ export default function ProjectCard({ repo }: { repo: GitHubRepo }) {
                 <span>Actualizado: {formatDate(repo.updated_at)}</span>
             </div>
 
-            <div className="mt-auto flex gap-3 pt-2">
+            <div className="mt-auto flex gap-2 pt-2">
 
-                <a  href={repo.html_url}
+                <a href={repo.html_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-medium underline underline-offset-2 hover:text-neutral-600 dark:hover:text-neutral-300"
+                    className={`rounded-lg border border-neutral-300 px-3 py-1.5 text-xs font-medium transition-colors dark:border-neutral-700 ${isSecurity
+                        ? "hover:border-accent-security hover:text-accent-security"
+                        : "hover:border-accent-dev hover:text-accent-dev"
+                        }`}
                 >
                     GitHub
                 </a>
                 {repo.homepage && (
 
-                    < a href={repo.homepage}
+                    <a href={repo.homepage}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-medium underline underline-offset-2 hover:text-neutral-600 dark:hover:text-neutral-300"
+                        className={`rounded-lg border border-neutral-300 px-3 py-1.5 text-xs font-medium transition-colors dark:border-neutral-700 ${isSecurity
+                            ? "hover:border-accent-security hover:text-accent-security"
+                            : "hover:border-accent-dev hover:text-accent-dev"
+                            }`}
                     >
                         Demo
                     </a>
