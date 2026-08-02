@@ -41,7 +41,7 @@ export default function ProjectsClient({ repos }: { repos: GitHubRepo[] }) {
                     <button
                         onClick={() => setSelectedLanguage(null)}
                         className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${selectedLanguage === null
-                            ? "bg-accent text-accent-foreground"
+                            ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
                             : "bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
                             }`}
                     >
