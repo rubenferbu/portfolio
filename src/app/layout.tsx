@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import Nav from "../components/Nav";
+import Nav from "@/src/components/Nav";
+import BottomNav from "@/src/components/BottomNav";
 import { siteConfig } from "@/src/config/site";
 import "./globals.css";
 
@@ -51,6 +52,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Nav />
           {children}
+          <BottomNav />
         </ThemeProvider>
       </body>
     </html>
