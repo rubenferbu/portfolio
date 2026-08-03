@@ -2,6 +2,7 @@ import Hero from "@/src/components/Hero";
 import About from "@/src/components/About";
 import Projects from "@/src/components/Projects";
 import Contact from "@/src/components/Contact";
+import Credentials from "@/src/components/Credentials";
 import { siteConfig } from "@/src/config/site";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         goals={siteConfig.about.goals}
       />
       <Projects />
+      <Credentials />
       <Contact />
     </main>
   );
