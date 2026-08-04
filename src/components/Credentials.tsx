@@ -29,18 +29,20 @@ export default function Credentials() {
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             whileHover={{ y: -4 }}
                             className={`flex flex-col items-center gap-3 rounded-xl border-t-4 border-neutral-200 p-5 text-center transition-shadow hover:shadow-lg dark:border-neutral-800 ${isSecurity
-                                    ? "border-t-accent-security hover:shadow-accent-security/20"
-                                    : "border-t-accent-dev hover:shadow-accent-dev/20"
+                                ? "border-t-accent-security hover:shadow-accent-security/20"
+                                : "border-t-accent-dev hover:shadow-accent-dev/20"
                                 }`}
                         >
                             <div className="flex h-40 w-full items-center justify-center overflow-hidden rounded-lg bg-neutral-50 dark:bg-neutral-900">
                                 {cred.type === "credly" && (
-                                    <div
-                                        data-iframe-width="150"
-                                        data-iframe-height="180"
-                                        data-share-badge-id={cred.credlyId}
-                                        data-share-badge-host="https://www.credly.com"
-                                    />
+                                    <div className="origin-center scale-[0.55]">
+                                        <div
+                                            data-iframe-width="150"
+                                            data-iframe-height="270"
+                                            data-share-badge-id={cred.credlyId}
+                                            data-share-badge-host="https://www.credly.com"
+                                        />
+                                    </div>
                                 )}
                                 {(cred.type === "image" || cred.type === "openbadge") && (
                                     // eslint-disable-next-line @next/next/no-img-element

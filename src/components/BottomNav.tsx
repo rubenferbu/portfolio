@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Home, FolderGit2, Mail } from "lucide-react";
+import { Home, FolderGit2, Award, Mail } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import * as motion from "motion/react-client";
 
@@ -15,6 +15,7 @@ interface NavItem {
 const items: NavItem[] = [
     { href: "#inicio", id: "inicio", label: "Inicio", icon: Home },
     { href: "#proyectos", id: "proyectos", label: "Proyectos", icon: FolderGit2 },
+    { href: "#credenciales", id: "credenciales", label: "Credenciales", icon: Award },
     { href: "#contacto", id: "contacto", label: "Contacto", icon: Mail },
 ];
 
@@ -52,8 +53,8 @@ export default function BottomNav() {
                             href={href}
                             whileTap={{ scale: 0.9 }}
                             className={`flex flex-col items-center gap-1 px-4 py-1 text-xs transition-colors ${isActive
-                                    ? "font-semibold text-neutral-900 dark:text-white"
-                                    : "text-neutral-500 dark:text-neutral-500"
+                                ? "font-semibold text-neutral-900 dark:text-white"
+                                : "text-neutral-500 dark:text-neutral-500"
                                 }`}
                         >
                             <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />

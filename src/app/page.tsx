@@ -19,8 +19,10 @@ export default function Home() {
       />
       <About
         whatIDo={siteConfig.about.whatIDo}
+        whatIDoPoints={[...siteConfig.about.whatIDoPoints]}
         stack={[...siteConfig.about.stack]}
         goals={siteConfig.about.goals}
+        goalsPoints={[...siteConfig.about.goalsPoints]}
       />
       <Projects />
       <Credentials />

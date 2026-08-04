@@ -11,16 +11,28 @@ export const siteConfig = {
   about: {
     whatIDo:
       "Soy desarrollador Full-Stack junior, formándome en The Powerd. Mi base combina desarrollo web (frontend y backend), desarrollo móvil con Kotlin y Jetpack Compose, y una formación activa en ciberseguridad. Soy autodidacta: me gusta entender el porqué de cada herramienta antes de usarla, no solo aplicarla.",
+    whatIDoPoints: [
+      "Desarrollo web Full-Stack: frontend y backend",
+      "Desarrollo móvil con Kotlin y Jetpack Compose",
+      "Formación activa en ciberseguridad aplicada al código",
+    ],
     stack: [
-      { name: "JavaScript", area: "dev" },
-      { name: "TypeScript", area: "dev" },
-      { name: "React", area: "dev" },
-      { name: "Kotlin", area: "dev" },
-      { name: "Jetpack Compose", area: "dev" },
+      { name: "JavaScript", area: "dev" as const, subArea: "web" as const, tier: "base" as const },
+      { name: "TypeScript", area: "dev" as const, subArea: "web" as const, tier: "base" as const },
+      { name: "React", area: "dev" as const, subArea: "web" as const, tier: "hero" as const },
+      { name: "Kotlin", area: "dev" as const, subArea: "mobile" as const, tier: "highlight" as const },
+      { name: "Jetpack Compose", area: "dev" as const, subArea: "mobile" as const, tier: "base" as const },
     ],
     goals:
       "Seguir creciendo como desarrollador Full-Stack, profundizar en la intersección entre desarrollo y ciberseguridad, y participar en proyectos reales donde pueda seguir aprendiendo de otros perfiles.",
+
+    goalsPoints: [
+      "Seguir creciendo como desarrollador Full-Stack",
+      "Profundizar en la intersección entre desarrollo y ciberseguridad",
+      "Sumarme a proyectos reales para aprender en equipo",
+    ],
   },
+
   contact: {
     heading: "Disponible para nuevas oportunidades",
     description:
