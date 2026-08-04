@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import * as motion from "motion/react-client";
 import { Code2, Smartphone, ShieldCheck, Rocket, GitMerge, Users } from "lucide-react";
 import StackBento, { type StackItem } from "@/src/components/StackBento";
-import { Suspense } from "react";
 
 interface AboutProps {
     whatIDo: string;
