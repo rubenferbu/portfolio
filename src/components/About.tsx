@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import * as motion from "motion/react-client";
 import { Code2, Smartphone, ShieldCheck, Rocket, GitMerge, Users } from "lucide-react";
 import StackBento, { type StackItem } from "@/src/components/StackBento";
@@ -23,7 +24,6 @@ export default function About({
             <h2 className="mb-10 text-center text-3xl font-bold tracking-tight">
                 Sobre mí
             </h2>
-
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3 items-stretch">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,9 @@ export default function About({
                     className="flex h-full flex-col rounded-xl border border-neutral-200 p-6 dark:border-neutral-800"
                 >
                     <h3 className="mb-3 text-lg font-semibold">Stack favorito</h3>
-                    <StackBento stack={stack} />
+                    <Suspense fallback={null}>
+                        <StackBento stack={stack} />
+                    </Suspense>
                     <p className="mt-3 text-xs italic text-neutral-500 dark:text-neutral-500">
                         Autodidacta — siempre ampliando esta lista.
                     </p>

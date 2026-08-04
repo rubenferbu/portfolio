@@ -3,6 +3,7 @@ import About from "@/src/components/About";
 import Projects from "@/src/components/Projects";
 import Contact from "@/src/components/Contact";
 import Credentials from "@/src/components/Credentials";
+import Highlights from "@/src/components/Highlights";
 import { siteConfig } from "@/src/config/site";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         linkedinUrl={siteConfig.social.linkedin}
         email={siteConfig.email}
       />
+      <Highlights />
       <About
         whatIDo={siteConfig.about.whatIDo}
         whatIDoPoints={[...siteConfig.about.whatIDoPoints]}
