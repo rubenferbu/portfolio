@@ -10,11 +10,11 @@ export default function Nav() {
                 </Link>
 
                 <nav className="hidden items-center gap-6 text-sm font-medium sm:flex">
-                    <Link href="#inicio" className="transition-colors hover:text-neutral-500 dark:hover:text-neutral-300">
-                        Inicio
-                    </Link>
                     <Link href="#proyectos" className="transition-colors hover:text-neutral-500 dark:hover:text-neutral-300">
                         Proyectos
+                    </Link>
+                    <Link href="#credenciales" className="transition-colors hover:text-neutral-500 dark:hover:text-neutral-300">
+                        Credenciales
                     </Link>
                     <Link href="#contacto" className="transition-colors hover:text-neutral-500 dark:hover:text-neutral-300">
                         Contacto
