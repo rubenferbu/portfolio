@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import * as motion from "motion/react-client";
 import { Code2, Smartphone, ShieldCheck, Rocket, GitMerge, Users } from "lucide-react";
 import StackBento, { type StackItem } from "@/src/components/StackBento";
@@ -24,7 +25,6 @@ export default function About({
             <h2 className="mb-10 text-center text-3xl font-bold tracking-tight">
                 Sobre mí
             </h2>
-
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3 items-stretch">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
