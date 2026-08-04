@@ -1,6 +1,7 @@
 import * as motion from "motion/react-client";
 import { Code2, Smartphone, ShieldCheck, Rocket, GitMerge, Users } from "lucide-react";
 import StackBento, { type StackItem } from "@/src/components/StackBento";
+import { Suspense } from "react";
 
 interface AboutProps {
     whatIDo: string;
@@ -54,7 +55,9 @@ export default function About({
                     className="flex h-full flex-col rounded-xl border border-neutral-200 p-6 dark:border-neutral-800"
                 >
                     <h3 className="mb-3 text-lg font-semibold">Stack favorito</h3>
-                    <StackBento stack={stack} />
+                    <Suspense fallback={null}>
+                        <StackBento stack={stack} />
+                    </Suspense>
                     <p className="mt-3 text-xs italic text-neutral-500 dark:text-neutral-500">
                         Autodidacta — siempre ampliando esta lista.
                     </p>
