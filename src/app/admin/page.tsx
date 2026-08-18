@@ -1,4 +1,5 @@
 import { auth, signOut } from "@/src/auth";
+import UploadForm from "@/src/app/admin/UploadForm";
 
 export default async function AdminPage() {
     const session = await auth();
@@ -9,6 +10,10 @@ export default async function AdminPage() {
             <p className="mt-2 text-sm text-neutral-500">
                 Sesión iniciada como {session?.user?.name ?? session?.user?.email ?? "rubenferbu"}
             </p>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+                <UploadForm label="Foto de perfil" accept="image/*" fieldName="photo" />
+                <UploadForm label="CV (PDF)" accept="application/pdf" fieldName="cv" />
+            </div>
             <form
                 action={async () => {
                     "use server";
