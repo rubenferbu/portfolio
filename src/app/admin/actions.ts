@@ -2,7 +2,7 @@
 
 import { put, del } from "@vercel/blob";
 import { auth } from "@/src/auth";
-import { getConfigValue, setConfigValue } from "@/src/lib/global-config";
+import { getConfigValue, setConfigValue, saveConfigValue } from "@/src/lib/global-config";
 
 export async function uploadFile(formData: FormData) {
     const session = await auth();
@@ -40,4 +40,21 @@ export async function uploadFile(formData: FormData) {
     await setConfigValue(configKey, publicUrl, !!previousUrl);
 
     return blob.url;
+}
+
+export async function updateContent(formData: FormData) {
+    const session = await auth();
+    if (!session) {
+        throw new Error("No autorizado");
+    }
+
+    const whatIDo = formData.get("whatIDo") as string;
+    const goals = formData.get("goals") as string;
+    const whatIDoPoints = formData.get("whatIDoPoints") as string;
+    const goalsPoints = formData.get("goalsPoints") as string;
+
+    await saveConfigValue("whatIDo", whatIDo);
+    await saveConfigValue("goals", goals);
+    await saveConfigValue("whatIDoPoints", whatIDoPoints);
+    await saveConfigValue("goalsPoints", goalsPoints);
 }

@@ -54,3 +54,8 @@ export async function setConfigValue(key: string, value: string, exists: boolean
     throw new Error(`No se pudo actualizar la configuración: ${res.status} — ${body}`);
   }
 }
+
+export async function saveConfigValue(key: string, value: string) {
+  const existing = await getConfigValue(key);
+  await setConfigValue(key, value, !!existing);
+}
