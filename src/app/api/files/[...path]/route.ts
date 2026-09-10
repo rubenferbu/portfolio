@@ -10,6 +10,7 @@ export async function GET(
 
     try {
         const result = await get(pathname, { access: "private" });
+<<<<<<< HEAD
 
         if (!result) {
             return NextResponse.json({ error: "Archivo no encontrado" }, { status: 404 });
@@ -19,6 +20,14 @@ export async function GET(
             headers: {
                 "Content-Type": result.blob.contentType ?? "application/octet-stream",
                 "Content-Disposition": "inline",
+=======
+        if (!result) {
+        return NextResponse.json({ error: "Archivo no encontrado" }, { status: 404 });
+        }
+        return new NextResponse(result.stream, {
+            headers: {
+                "Content-Type": result.blob.contentType ?? "application/octet-stream",
+>>>>>>> main
             },
         });
     } catch {
