@@ -13,10 +13,10 @@ interface NavItem {
 }
 
 const items: NavItem[] = [
-    { href: "#inicio", id: "inicio", label: "Inicio", icon: Home },
-    { href: "#proyectos", id: "proyectos", label: "Proyectos", icon: FolderGit2 },
-    { href: "#credenciales", id: "credenciales", label: "Credenciales", icon: Award },
-    { href: "#contacto", id: "contacto", label: "Contacto", icon: Mail },
+    { href: "/#inicio", id: "inicio", label: "Inicio", icon: Home },
+    { href: "/#proyectos", id: "proyectos", label: "Proyectos", icon: FolderGit2 },
+    { href: "/#credenciales", id: "credenciales", label: "Credenciales", icon: Award },
+    { href: "/#contacto", id: "contacto", label: "Contacto", icon: Mail },
 ];
 
 export default function BottomNav() {

@@ -1,4 +1,5 @@
 import * as motion from "motion/react-client";
+import { getConfigValue } from "@/src/lib/global-config";
 
 interface HeroProps {
     name: string;
@@ -9,7 +10,7 @@ interface HeroProps {
     email: string;
 }
 
-export default function Hero({
+export default async function Hero({
     name,
     initials,
     tagline,
@@ -17,6 +18,8 @@ export default function Hero({
     linkedinUrl,
     email,
 }: HeroProps) {
+    const photoUrl = await getConfigValue("photoUrl");
+    const cvUrl = await getConfigValue("cvUrl");
     return (
         <motion.section
             id="inicio"
@@ -43,9 +46,17 @@ export default function Hero({
                 className="absolute right-8 top-24 -z-10 hidden h-16 w-16 rotate-12 rounded-xl border-2 border-accent-dev/30 sm:block"
             />
 
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-neutral-800 text-2xl font-semibold text-white dark:bg-neutral-200 dark:text-neutral-900">
-                {initials}
-            </div>
+            {photoUrl ? (
+                <img
+                    src={photoUrl}
+                    alt={name}
+                    className="h-20 w-20 rounded-full object-cover"
+                />
+            ) : (
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-neutral-800 text-2xl font-semibold text-white dark:bg-neutral-200 dark:text-neutral-900">
+                    {initials}
+                </div>
+            )}
 
             <div className="max-w-2xl space-y-3">
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
@@ -60,14 +71,27 @@ export default function Hero({
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-                <button
-                    type="button"
-                    disabled
-                    title="Próximamente"
-                    className="cursor-not-allowed rounded-lg border border-neutral-300 px-5 py-2 text-sm font-medium text-neutral-400 dark:border-neutral-700 dark:text-neutral-600"
-                >
-                    Descargar CV
-                </button>
+                {cvUrl ? (
+                    <motion.a
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.97 }}
+                        href={cvUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-lg border border-neutral-300 px-5 py-2 text-sm font-medium transition-colors hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800"
+                    >
+                        Descargar CV
+                    </motion.a>
+                ) : (
+                    <button
+                        type="button"
+                        disabled
+                        title="Próximamente"
+                        className="cursor-not-allowed rounded-lg border border-neutral-300 px-5 py-2 text-sm font-medium text-neutral-400 dark:border-neutral-700 dark:text-neutral-600"
+                    >
+                        Descargar CV
+                    </button>
+                )}
 
                 <motion.a
                     whileHover={{ scale: 1.05 }}
